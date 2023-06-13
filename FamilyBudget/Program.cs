@@ -15,10 +15,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql
 builder.Services.AddSingleton<IDapperContext, DapperContext>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+
 builder.Services.AddIdentity<AppUserEntity, AppRoleEntity>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<UserManager<AppUserEntity>>();
 
 builder.Services.AddAuthentication(options =>
     {
