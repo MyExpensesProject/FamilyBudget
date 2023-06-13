@@ -80,27 +80,27 @@ public class ApplicationDbContext : IdentityDbContext<UserEntity, RoleEntity, Gu
         
         modelBuilder.Entity<UserRolesEntity>(entity =>
         {
-            entity.ToTable("UserRoles");
+            entity.ToTable(name: "UserRoles");
         });
         
         modelBuilder.Entity<UserClaimEntity>(entity =>
         {
-            entity.ToTable("UserClaims");
+            entity.ToTable(name: "UserClaims");
         });
         
         modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
         {
-            entity.ToTable("UserLogins");
+            entity.ToTable(name: "UserLogins");
         });
         
         modelBuilder.Entity<IdentityRoleClaim<Guid>>(entity =>
         {
-            entity.ToTable("RoleClaims");
+            entity.ToTable(name: "RoleClaims");
         });
         
         modelBuilder.Entity<IdentityUserToken<Guid>>(entity =>
         {
-            entity.ToTable("UserTokens");
+            entity.ToTable(name: "UserTokens");
         });
     }
 }
