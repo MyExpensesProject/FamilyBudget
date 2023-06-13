@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Modules\Expenses\Expenses.App\Expenses.App.csproj" />
       <ProjectReference Include="..\Shared\Shared.Core\Shared.Core.csproj" />
       <ProjectReference Include="..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
       <ProjectReference Include="..\Shared\Shared.Migrations\Shared.Migrations.csproj" />

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Shared.Infrastructure.Interfaces;
+using Shared.Infrastructure.Services;
 using Shared.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +25,7 @@ builder.Services.AddIdentity<AppUserEntity, AppRoleEntity>(options => options.Si
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<UserManager<AppUserEntity>>();
+builder.Services.AddScoped<IUserService<AppUserEntity>, UserService<AppUserEntity>>();
 
 builder.Services.AddAuthentication(options =>
     {
