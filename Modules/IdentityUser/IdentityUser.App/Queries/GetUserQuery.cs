@@ -8,9 +8,9 @@ namespace IdentityUser.App.Queries
     /// <summary>
     /// Query
     /// </summary>
-    public record GetUserQuery(string Email, string Password) : IRequest<UserEntity?>;
+    public record GetUserQuery(string Email, string Password) : IRequest<AppUserEntity?>;
 
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserEntity?>
+    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, AppUserEntity?>
     {
         private readonly IApplicationDbContext _context;
 
@@ -19,11 +19,10 @@ namespace IdentityUser.App.Queries
             _context = context;
         }
 
-        public async Task<UserEntity?> Handle(GetUserQuery query, CancellationToken cancellationToken)
+        public async Task<AppUserEntity?> Handle(GetUserQuery query, CancellationToken cancellationToken)
         {
             var data = await _context.Users.FirstOrDefaultAsync(d =>
-                    d.Email == query.Email
-                    && d.Password == query.Password,
+                    d.Email == query.Email,
                 cancellationToken: cancellationToken);
 
             return data;

@@ -11,22 +11,37 @@ public interface IApplicationDbContext
     /// <summary>
     /// Users
     /// </summary>
-    public DbSet<UserEntity> Users { get; set; }
-    
-    /// <summary>
-    /// User claims
-    /// </summary>
-    public DbSet<UserClaimEntity> UserClaims { get; set; }
-    
-    /// <summary>
-    /// Roles
-    /// </summary>
-    public DbSet<RoleEntity> Roles { get; set; }
-    
+    public DbSet<AppUserEntity> Users { get; set; }
+
     /// <summary>
     /// User roles
     /// </summary>
-    public DbSet<UserRolesEntity> UserRoles { get; set; }
+    public DbSet<AppUserRoleEntity> UserRoles { get; set; }
+
+    /// <summary>
+    /// User claims
+    /// </summary>
+    public DbSet<AppUserClaimEntity> UserClaims { get; set; }
+
+    /// <summary>
+    /// User logins
+    /// </summary>
+    public DbSet<AppUserLoginEntity> UserLogins { get; set; }
+
+    /// <summary>
+    /// User tokens
+    /// </summary>
+    public DbSet<AppUserTokenEntity> UserTokens { get; set; }
+
+    /// <summary>
+    /// Roles
+    /// </summary>
+    public DbSet<AppRoleEntity> Roles { get; set; }
+
+    /// <summary>
+    /// Role claims
+    /// </summary>
+    public DbSet<AppRoleClaimEntity> RoleClaims { get; set; }
     
     /// <summary>
     /// Save changes async

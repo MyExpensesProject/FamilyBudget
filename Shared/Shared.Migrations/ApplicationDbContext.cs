@@ -1,5 +1,4 @@
 ﻿using IdentityUser.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shared.Migrations.Relationships;
@@ -12,33 +11,13 @@ namespace Shared.Migrations;
 /// <summary>
 /// Application db context
 /// </summary>
-public class ApplicationDbContext : IdentityDbContext<UserEntity, RoleEntity, Guid>, IApplicationDbContext
+public class ApplicationDbContext : IdentityDbContext<AppUserEntity, AppRoleEntity, Guid, AppUserClaimEntity, AppUserRoleEntity, AppUserLoginEntity, AppRoleClaimEntity, AppUserTokenEntity>, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
 
-    /// <summary>
-    /// Users
-    /// </summary>
-    public DbSet<UserEntity> Users { get; set; }
-
-    /// <summary>
-    /// User claims
-    /// </summary>
-    public DbSet<UserClaimEntity> UserClaims { get; set; }
-
-    /// <summary>
-    /// Roles
-    /// </summary>
-    public DbSet<RoleEntity> Roles { get; set; }
-
-    /// <summary>
-    /// User roles
-    /// </summary>
-    public DbSet<UserRolesEntity> UserRoles { get; set; }
-    
     /// <summary>
     /// Save changes async
     /// </summary>
@@ -65,42 +44,5 @@ public class ApplicationDbContext : IdentityDbContext<UserEntity, RoleEntity, Gu
     private void RenameIdentityTables(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        
-        modelBuilder.HasDefaultSchema("public");
-        
-        modelBuilder.Entity<UserEntity>(entity =>
-        {
-            entity.ToTable(name: "Users");
-        });
-        
-        modelBuilder.Entity<RoleEntity>(entity =>
-        {
-            entity.ToTable(name: "Roles");
-        });
-        
-        modelBuilder.Entity<UserRolesEntity>(entity =>
-        {
-            entity.ToTable(name: "UserRoles");
-        });
-        
-        modelBuilder.Entity<UserClaimEntity>(entity =>
-        {
-            entity.ToTable(name: "UserClaims");
-        });
-        
-        modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
-        {
-            entity.ToTable(name: "UserLogins");
-        });
-        
-        modelBuilder.Entity<IdentityRoleClaim<Guid>>(entity =>
-        {
-            entity.ToTable(name: "RoleClaims");
-        });
-        
-        modelBuilder.Entity<IdentityUserToken<Guid>>(entity =>
-        {
-            entity.ToTable(name: "UserTokens");
-        });
     }
 }
