@@ -1,12 +1,7 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Shared.Core.Entities;
 
-namespace Users.Domain.Entities;
+namespace IdentityUser.Domain.Entities;
 
 /// <summary>
 /// User entity

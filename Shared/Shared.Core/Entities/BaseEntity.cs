@@ -1,9 +1,4 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
-namespace Shared.Core.Entities;
+﻿namespace Shared.Core.Entities;
 
 public class BaseEntity : IBaseEntity, IAuditableEntity
 {

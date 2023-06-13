@@ -5,6 +5,7 @@ using FamilyBudget.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Shared.Migrations;
 
 namespace FamilyBudget.Data.Migrations
 {

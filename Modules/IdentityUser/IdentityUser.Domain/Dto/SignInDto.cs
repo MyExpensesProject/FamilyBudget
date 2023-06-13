@@ -1,10 +1,5 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
-#pragma warning disable CS8618
-namespace Users.Domain.Dto;
+﻿#pragma warning disable CS8618
+namespace IdentityUser.Domain.Dto;
 
 /// <summary>
 /// Sign in dto

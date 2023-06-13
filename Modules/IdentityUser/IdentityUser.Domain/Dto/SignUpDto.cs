@@ -1,9 +1,4 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
-namespace Users.Domain.Dto;
+﻿namespace IdentityUser.Domain.Dto;
 
 /// <summary>
 /// Sign up Dto

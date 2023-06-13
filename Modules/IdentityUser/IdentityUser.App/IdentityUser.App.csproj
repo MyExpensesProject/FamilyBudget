@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\Shared.Migrations\Shared.Migrations.csproj" />
+      <ProjectReference Include="..\IdentityUser.Domain\IdentityUser.Domain.csproj" />
+      <ProjectReference Include="..\IdentityUser.Infrastructure\IdentityUser.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

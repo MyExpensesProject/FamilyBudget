@@ -1,14 +1,9 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
+﻿using IdentityUser.Domain.Dto;
+using IdentityUser.Domain.Entities;
 using MediatR;
 using Shared.Migrations;
-using Users.Domain.Dto;
-using Users.Domain.Entities;
 
-namespace Users.Application.Commands;
+namespace IdentityUser.App.Commands;
 
 /// <summary>
 /// Command

@@ -1,14 +1,9 @@
-﻿/*
- * Date: 2023-02-23
- * Author: A.A.Konkin
-*/
-
+﻿using IdentityUser.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shared.Migrations;
-using Users.Domain.Entities;
 
-namespace Users.Application.Queries
+namespace IdentityUser.App.Queries
 {
     /// <summary>
     /// Query
