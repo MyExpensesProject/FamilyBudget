@@ -1,4 +1,5 @@
-﻿using IdentityUser.Domain.Entities;
+﻿using Expenses.Domain.Entities;
+using IdentityUser.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shared.Migrations.Relationships;
@@ -17,6 +18,26 @@ public class ApplicationDbContext : IdentityDbContext<AppUserEntity, AppRoleEnti
         : base(options)
     {
     }
+
+    /// <summary>
+    /// Expenses
+    /// </summary>
+    public DbSet<ExpenseEntity> Expenses { get; set; }
+
+    /// <summary>
+    /// Family users
+    /// </summary>
+    public DbSet<FamilyUsersEntity> FamilyUsers { get; set; }
+
+    /// <summary>
+    /// Expense types
+    /// </summary>
+    public DbSet<ExpenseTypeEntity> ExpenseTypes { get; set; }
+
+    /// <summary>
+    /// Transactions
+    /// </summary>
+    public DbSet<TransactionEntity> Transactions { get; set; }
 
     /// <summary>
     /// Save changes async
