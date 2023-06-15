@@ -4,25 +4,41 @@
 @inject SignInManager<AppUserEntity> SignInManager
 @inject UserManager<AppUserEntity> UserManager
 
-<ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
-        </li>
-    }
-    else
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        </li>
-    }
-</ul>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="flex w-full flex-col space-y-4 rounded-md bg-slate-50">
+        <div>
+            <h5 class="text-lg font-semibold">Hello</h5>
+            <p>@User.Identity?.Name</p>
+        </div>
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="flex items-center space-x-2 hover:text-blue-500">
+            👤
+            <p class="w-full">Settings</p>
+            ⚙
+        </a>
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="flex items-center space-x-2 hover:text-blue-500">
+                🢱
+                <p class="w-full">Logout</p>
+            </button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="flex w-full flex-col space-y-4 rounded-md bg-slate-50">
+        <div>
+            <h5 class="text-lg font-semibold">Hello</h5>
+        </div>
+        <a asp-area="Identity" asp-page="/Account/Register" class="flex items-center space-x-2 hover:text-blue-500">
+            👤
+            <p class="w-full">Register</p>
+            →
+        </a>
+        <a asp-area="Identity" asp-page="/Account/Login" class="flex items-center space-x-2 hover:text-blue-500">
+            👤
+            <p class="w-full">Login</p>
+            ↓
+        </a>
+    </div>
+}
