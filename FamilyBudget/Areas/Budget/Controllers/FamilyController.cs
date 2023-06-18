@@ -2,14 +2,14 @@ using FamilyBudget.Controllers.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FamilyBudget.Areas.Expense.Controllers;
+namespace FamilyBudget.Areas.Budget.Controllers;
 
 /// <summary>
-/// Expenses controller
+/// Family controller
 /// </summary>
-[Area("Expense")]
+[Area("Budget")]
 [Authorize]
-public class ExpenseController : BaseController
+public class FamilyController : BaseController
 {
     /// <summary>
     /// Index
@@ -21,37 +21,37 @@ public class ExpenseController : BaseController
     }
 
     /// <summary>
-    /// User expenses
+    /// Family Budget
     /// </summary>
     /// <returns></returns>
-    public IActionResult UserExpenses()
+    public IActionResult FamilyBudget()
     {
         return View();
     }
 
     /// <summary>
-    /// Create expense
+    /// Family Member Budget
     /// </summary>
     /// <returns></returns>
-    public IActionResult CreateExpense()
+    public IActionResult FamilyMemberBudget()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// Add user to family
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult AddUserToFamily()
     {
         return RedirectToAction("Index");
     }
     
     /// <summary>
-    /// Update expense
+    /// Remove user from family
     /// </summary>
     /// <returns></returns>
-    public IActionResult UpdateExpense()
-    {
-        return RedirectToAction("Index");
-    }
-    
-    /// <summary>
-    /// Delete expense
-    /// </summary>
-    /// <returns></returns>
-    public IActionResult DeleteExpense()
+    public IActionResult RemoveUserFromFamily()
     {
         return RedirectToAction("Index");
     }

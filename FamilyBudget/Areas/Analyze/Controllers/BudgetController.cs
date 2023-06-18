@@ -2,14 +2,14 @@ using FamilyBudget.Controllers.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FamilyBudget.Areas.User.Controllers;
+namespace FamilyBudget.Areas.Analyze.Controllers;
 
 /// <summary>
-/// User controller
+/// Analyze controller
 /// </summary>
-[Area("User")]
+[Area("Analyze")]
 [Authorize]
-public class UserController : BaseController
+public class AnalyzeController : BaseController
 {
     /// <summary>
     /// Index

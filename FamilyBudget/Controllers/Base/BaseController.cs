@@ -1,7 +1,9 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using FamilyBudget.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Infrastructure.Interfaces;
 
 namespace FamilyBudget.Controllers.Base;
 
@@ -10,13 +12,20 @@ namespace FamilyBudget.Controllers.Base;
 /// </summary>
 public class BaseController : Controller
 {
-    protected readonly IMediator Mediator;
+    /// <summary>
+    /// Mediator
+    /// </summary>
+    protected IMediator Mediator =>
+        HttpContext.RequestServices.GetService<IMediator>()
+        ?? throw new InvalidOperationException();
 
-    protected BaseController(IMediator mediator)
-    {
-        Mediator = mediator;
-    }
-    
+    /// <summary>
+    /// User service
+    /// </summary>
+    protected IUserService<ClaimsPrincipal> UserService =>
+        HttpContext.RequestServices.GetService<IUserService<ClaimsPrincipal>>()
+        ?? throw new InvalidOperationException();
+
     /// <summary>
     /// Error page
     /// </summary>

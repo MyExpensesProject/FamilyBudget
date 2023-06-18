@@ -1,6 +1,5 @@
 ﻿using FamilyBudget.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
-using MediatR;
 
 namespace FamilyBudget.Controllers;
 
@@ -8,7 +7,7 @@ public class HomeController : BaseController
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger, IMediator mediator) : base(mediator)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }

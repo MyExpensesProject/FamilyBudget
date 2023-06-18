@@ -1,5 +1,4 @@
 using FamilyBudget.Controllers.Base;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,15 +11,38 @@ namespace FamilyBudget.Areas.Budget.Controllers;
 [Authorize]
 public class BudgetController : BaseController
 {
-    protected BudgetController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     /// <summary>
     /// Index
     /// </summary>
     /// <returns></returns>
     public IActionResult Index()
+    {
+        return View();
+    }
+    
+    /// <summary>
+    /// Expense types
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult ExpenseTypes()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// User budget
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult FamilyBudget()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// User budget
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult FamilyMemberBudget()
     {
         return View();
     }

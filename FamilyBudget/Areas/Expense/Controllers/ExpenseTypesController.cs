@@ -1,10 +1,7 @@
-using System.Security.Claims;
 using Expenses.App.Queries.Expense;
 using FamilyBudget.Controllers.Base;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Shared.Infrastructure.Interfaces;
 
 namespace FamilyBudget.Areas.Expense.Controllers;
 
@@ -15,13 +12,6 @@ namespace FamilyBudget.Areas.Expense.Controllers;
 [Authorize]
 public class ExpenseTypesController : BaseController
 {
-    private readonly IUserService<ClaimsPrincipal> _userService;
-    
-    protected ExpenseTypesController(IMediator mediator, IUserService<ClaimsPrincipal> userService) : base(mediator)
-    {
-        _userService = userService;
-    }
-    
     /// <summary>
     /// Index
     /// </summary>
@@ -30,5 +20,41 @@ public class ExpenseTypesController : BaseController
     {
         var data = await Mediator.Send(new GetExpenseTypesQuery());
         return View(data);
+    }
+
+    /// <summary>
+    /// Create expense type
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult CreateExpenseType()
+    {
+        return RedirectToAction("Index");
+    }
+
+    /// <summary>
+    /// Update expense type
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult UpdateExpenseType()
+    {
+        return RedirectToAction("Index");
+    }
+
+    /// <summary>
+    /// Get expense type
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult GetExpenseTypeById()
+    {
+        return RedirectToAction("Index");
+    }
+    
+    /// <summary>
+    /// Delete expense type
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult DeleteExpenseType()
+    {
+        return RedirectToAction("Index");
     }
 }

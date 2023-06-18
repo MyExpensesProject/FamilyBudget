@@ -1,5 +1,4 @@
 using FamilyBudget.Controllers.Base;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +11,6 @@ namespace FamilyBudget.Areas.User.Controllers;
 [Authorize]
 public class UserManagementController : BaseController
 {
-    protected UserManagementController(IMediator mediator) : base(mediator)
-    {
-    }
-    
     /// <summary>
     /// Index
     /// </summary>

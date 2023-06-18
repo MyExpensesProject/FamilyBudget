@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function AddSidebar(sidebarName, parameters, getDataFunction) {
+    $('#openSidebar' + sidebarName).on("click", function () {
+        $('#sidebar' + sidebarName).css("transform", "translateX(0)");
+        $("#overlay").removeClass("hidden");
+        if (getDataFunction != null && parameters != null) {
+            getDataFunction(parameters);
+        }
+    });
+    $('#closeSidebar' + sidebarName + ", " + "#overlay").on("click", function () {
+        $('#sidebar' + sidebarName).css("transform", "translateX(-100%)");
+        $("#overlay").addClass("hidden");
+    });
+}

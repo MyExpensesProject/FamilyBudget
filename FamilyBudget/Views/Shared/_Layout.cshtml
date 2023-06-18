@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - FamilyBudget</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="~/lib/axios/axios.min.js"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/FamilyBudget.styles.css" asp-append-version="true"/>
 </head>
@@ -13,6 +14,7 @@
 
 <main role="main" class="flex h-screen w-full space-x-6 bg-slate-50 pr-6 sm:flex-col sm:pt-4 md:flex-row md:pt-0">
     @await Html.PartialAsync("_Navbar")
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-10"></div>
     @RenderBody()
 </main>
 

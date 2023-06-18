@@ -1,3 +1,4 @@
+using FamilyBudget.Extensions;
 using IdentityUser.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -17,7 +18,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql
 builder.Services.AddSingleton<IDapperContext, DapperContext>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
 
 builder.Services.AddIdentity<AppUserEntity, AppRoleEntity>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -41,10 +41,9 @@ builder.Services.AddAuthentication(options =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Program).Assembly));
-
+MappingExtensions.AutoMapperExtensions(builder);
+builder.Services.AddMediatR(MediatRConfigurationExtension.Configuration());
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
 var app = builder.Build();
