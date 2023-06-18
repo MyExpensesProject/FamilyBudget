@@ -5,15 +5,17 @@
     Layout = "_Layout";
 }
 
-@await Html.PartialAsync("Partial/_CreateExpenseType", new ExpenseTypeDto())
-@await Html.PartialAsync("Partial/_UpdateExpenseType", new ExpenseTypeDto())
-
-<button id="openSidebarCreateExpenseType" class="flex items-center space-x-1">
-    Create expense type
-</button>
-
 <div id="content" class="m-6 flex w-full flex-col space-y-6 overflow-scroll rounded-md bg-white p-6">
+    
+    @await Html.PartialAsync("Partial/_CreateExpenseType", new ExpenseTypeDto())
+    @await Html.PartialAsync("Partial/_UpdateExpenseType", new ExpenseTypeDto())
+    
     <h3 class="text-2xl font-semibold">@ViewData["Title"]</h3>
+
+    <button id="openSidebarCreateExpenseType" class="flex items-center space-x-1">
+        Create expense type
+    </button>
+
     <table>
         <thead>
         <tr>
