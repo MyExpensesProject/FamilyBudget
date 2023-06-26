@@ -42,9 +42,12 @@ builder.Services.AddAuthentication(options =>
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 MappingExtensions.AutoMapperExtensions(builder);
+
 builder.Services.AddMediatR(MediatRConfigurationExtension.Configuration());
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+builder.Services.AddScoped <IRedisCacheService, RedisCacheService> ();
 
 var app = builder.Build();
 
