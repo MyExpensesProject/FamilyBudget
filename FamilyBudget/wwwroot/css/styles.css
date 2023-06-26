@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-button-default {
+    @apply flex w-full rounded-md bg-slate-50 p-3 text-slate-900 hover:bg-blue-500 hover:text-white
+}
