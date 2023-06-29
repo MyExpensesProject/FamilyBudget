@@ -7,10 +7,6 @@
         <UserSecretsId>aspnet-FamilyBudget-F21515B2-3F68-43F9-8D1E-220C4F388477</UserSecretsId>
     </PropertyGroup>
 
-    <Target Name="RunTailwindCSSWatch" BeforeTargets="Build">
-        <Exec Command="npx tailwindcss -i .\wwwroot\css\tailwind.css -o .\wwwroot\css\tailwindStyles.css --watch --verbose" />
-    </Target>
-
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="7.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8" />
