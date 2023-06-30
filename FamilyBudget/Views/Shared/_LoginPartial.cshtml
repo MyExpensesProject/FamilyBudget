@@ -2,7 +2,6 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @using IdentityUser.Domain.Entities
 @inject SignInManager<AppUserEntity> SignInManager
-@inject UserManager<AppUserEntity> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
