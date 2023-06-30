@@ -34,7 +34,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /var/www/FamilyBudget/
-          git pull origin develop
+          git pull origin master
           cd FamilyBudget
           dotnet publish -o ../../app/
           sudo systemctl restart app.service
