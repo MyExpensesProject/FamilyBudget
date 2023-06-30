@@ -5,10 +5,10 @@
 <div id="content" class="m-6 flex w-full flex-col space-y-6 overflow-scroll rounded-md bg-white p-6">
     <h3 class="text-2xl font-semibold">@ViewData["Title"]</h3>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="FamilyBudgetAuthBot" data-size="large" data-radius="6" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
-    <script>
-        function onTelegramAuth(user) {
-            alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', ' + user.username : '') + ')');
-        }
-    </script>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - FamilyBudget - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
 </div>
