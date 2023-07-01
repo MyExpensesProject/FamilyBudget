@@ -6,7 +6,7 @@ namespace FamilyBudget.Extensions;
 /// <summary>
 /// MediatR configuration extension
 /// </summary>
-public static class MediatRConfigurationExtension
+public static class MediatRExtension
 {
     /// <summary>
     /// Configuration application services

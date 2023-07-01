@@ -5,39 +5,36 @@
     Layout = "_Layout";
 }
 
-<div id="content" class="m-6 flex w-full flex-col space-y-6 overflow-scroll rounded-md bg-white p-6">
-    
-    @await Html.PartialAsync("Partial/_CreateExpenseType", new ExpenseTypeDto())
-    @await Html.PartialAsync("Partial/_UpdateExpenseType", new ExpenseTypeDto())
-    
-    <h3 class="text-2xl font-semibold">@ViewData["Title"]</h3>
+@await Html.PartialAsync("Partial/_CreateExpenseType", new ExpenseTypeDto())
+@await Html.PartialAsync("Partial/_UpdateExpenseType", new ExpenseTypeDto())
 
-    <button id="openSidebarCreateExpenseType" class="flex items-center space-x-1">
-        Create expense type
-    </button>
+<h3 class="text-2xl font-semibold">@ViewData["Title"]</h3>
 
-    <table>
-        <thead>
+<button id="openSidebarCreateExpenseType" class="flex items-center space-x-1">
+    Create expense type
+</button>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>Name</th>
-            <th>Actions</th>
+            <td>@item.Name</td>
+            <td>
+                <button id="openSidebarUpdateExpenseType" onclick="GetExpenseTypeById(@item.Id)" class="flex items-center space-x-1">
+                    Edit
+                </button>
+            </td>
         </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>
-                    <button id="openSidebarUpdateExpenseType" onclick="GetExpenseTypeById(@item.Id)" class="flex items-center space-x-1">
-                        Edit
-                    </button>
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
-</div>
+    }
+    </tbody>
+</table>
 
 @section Scripts {
     <script>

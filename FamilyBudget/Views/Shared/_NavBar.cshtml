@@ -31,3 +31,14 @@
     <hr class="w-full border border-slate-50"/>
     @await Html.PartialAsync("_LoginPartial")
 </nav>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+          $("#navbar-toggle").click(function () {
+            $("#navbar-menu").toggleClass("hidden");
+          });
+        });
+    </script>
+}

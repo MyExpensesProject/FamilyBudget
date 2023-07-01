@@ -12,7 +12,7 @@ namespace FamilyBudget.Extensions;
 /// <summary>
 /// Database and identity extension
 /// </summary>
-public static class DatabaseAndIdentityExtension
+public static class DbExtension
 {
     /// <summary>
     /// Configure database and identity

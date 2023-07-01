@@ -13,24 +13,23 @@
 </head>
 <body>
 
-    <main role="main" class="flex h-screen w-full space-x-6 bg-slate-50 pr-6 flex-col md:flex-row pt-4 md:pt-0">
+    <main role="main" class="flex h-screen w-full bg-slate-50 pr-6 flex-col md:flex-row pt-4 md:pt-0">
         @await Html.PartialAsync("_Navbar")
         <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-10"></div>
-        @RenderBody()
+        <div id="content" class="m-6 flex w-full flex-col space-y-6 overflow-scroll rounded-md bg-white p-6">
+            @RenderBody()
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2023 - FamilyBudget - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>
+        </div>
     </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-
-    <script>
-        $(document).ready(function () {
-          $("#navbar-toggle").click(function () {
-            $("#navbar-menu").toggleClass("hidden");
-          });
-        });
-    </script>
 
 </body>
 </html>
