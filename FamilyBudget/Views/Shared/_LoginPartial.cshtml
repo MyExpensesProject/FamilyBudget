@@ -6,17 +6,17 @@
 {
     <div class="flex w-full flex-col space-y-4 rounded-md bg-slate-50 p-6">
         <div>
-            <h5 class="text-lg font-semibold">Hello</h5>
+            <h5 class="text-lg font-semibold">Привет</h5>
             <p>@User.Identity?.Name</p>
         </div>
         <a asp-area="Identity" asp-page="/Account/Manage/Index" class="flex w-full space-x-2 hover:text-blue-500">
             ⚙
-            <p class="w-full text-left">Settings</p>
+            <p class="w-full text-left">Настройки</p>
         </a>
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button type="submit" class="flex w-full space-x-2 hover:text-blue-500">
                 ⬅
-                <p class="w-full text-left">Logout</p>
+                <p class="w-full text-left">Выйти</p>
             </button>
         </form>
     </div>
@@ -25,15 +25,15 @@ else
 {
     <div class="flex w-full flex-col space-y-4 rounded-md bg-slate-50 p-6">
         <div>
-            <h5 class="text-lg font-semibold">Hello</h5>
+            <h5 class="text-lg font-semibold">Привет</h5>
         </div>
         <a asp-area="Identity" asp-page="/Account/Register" class="flex w-full space-x-2 hover:text-blue-500">
             ➡
-            <p class="w-full text-left">Register</p>
+            <p class="w-full text-left">Регистрация</p>
         </a>
         <a asp-area="Identity" asp-page="/Account/Login" class="flex w-full space-x-2 hover:text-blue-500">
             ⬇
-            <p class="w-full text-left">Login</p>
+            <p class="w-full text-left">Войти</p>
         </a>
     </div>
 }

@@ -15,19 +15,19 @@
         </h3>
     </a>
     <a asp-area="" asp-controller="Home" asp-action="Index" class="@Context.IsActive("/", "navBtnActive", "navBtnDefault")">
-        🏠 Home
+        🏠 Главная
     </a>
     <a asp-area="Budget" asp-controller="Family" asp-action="Index" class="@Context.IsActive("/Budget/Family", "navBtnActive", "navBtnDefault")">
-        👪 Family
+        👪 Семья
     </a>
     <a asp-area="Expense" asp-controller="Expense" asp-action="Index" class="@Context.IsActive("/Expense/Expense", "navBtnActive", "navBtnDefault")">
-        💸Expense
+        💸 Расходы
     </a>
     <a asp-area="Analyze" asp-controller="Analyze" asp-action="Index" class="@Context.IsActive("/Analyze/Analyze", "navBtnActive", "navBtnDefault")">
-        💹 Analyze
+        💹 Аналитика
     </a>
     <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@Context.IsActive("/Home/Privacy", "navBtnActive", "navBtnDefault")">
-        🔥 Privacy
+        🔥 Соглашения
     </a>
     <hr class="w-full border border-slate-50"/>
     @await Html.PartialAsync("_LoginPartial")

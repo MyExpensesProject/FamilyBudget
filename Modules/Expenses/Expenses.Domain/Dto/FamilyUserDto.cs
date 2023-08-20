@@ -1,11 +1,9 @@
-using Shared.Core.Entities;
-
-namespace Expenses.Domain.Entities;
+﻿namespace Expenses.Domain.Dto; 
 
 /// <summary>
-/// Expense dto
+/// Family user dto
 /// </summary>
-public class ExpenseDto : IBaseEntity
+public class FamilyUserDto 
 {
     /// <summary>
     /// Id
@@ -13,29 +11,14 @@ public class ExpenseDto : IBaseEntity
     public Guid Id { get; set; }
     
     /// <summary>
-    /// Name
+    /// Family head id
     /// </summary>
-    public string? Name { get; set; }
+    public Guid FamilyHeadId { get; set; }
     
     /// <summary>
-    /// Transaction id
+    /// Family member id
     /// </summary>
-    public Guid TransactionId { get; set; }
-    
-    /// <summary>
-    /// Transaction
-    /// </summary>
-    public TransactionEntity? Transaction { get; set; }
-    
-    /// <summary>
-    /// Expense type id
-    /// </summary>
-    public Guid ExpenseTypeId { get; set; }
-    
-    /// <summary>
-    /// Expense type
-    /// </summary>
-    public ExpenseTypeEntity? ExpenseType { get; set; }
+    public Guid FamilyMemberId { get; set; }
     
     /// <summary>
     /// Создал

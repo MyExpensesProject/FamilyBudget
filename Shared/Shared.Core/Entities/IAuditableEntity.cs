@@ -3,27 +3,27 @@
 public interface IAuditableEntity
 {
     /// <summary>
-    /// Id created user
+    /// Создал
     /// </summary>
     public Guid CreatedById { get; set; }
-    
+
     /// <summary>
-    /// Created date
+    /// Дата создания
     /// </summary>
     public DateTime CreateDate { get; set; }
-    
+
     /// <summary>
-    /// Id updated user
+    /// Обновил
     /// </summary>
     public Guid UpdateById { get; set; }
-    
+
     /// <summary>
-    /// Update date
+    /// Дата обновления
     /// </summary>
     public DateTime UpdateDate { get; set; }
-    
+
     /// <summary>
-    /// Is deleted flag
+    /// Флаг удаления true - удален, false - не удален
     /// </summary>
     public bool IsDeleted { get; set; }
 }
